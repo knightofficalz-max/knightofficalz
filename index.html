@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knight App Store - Coming Soon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #02050A;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* --- HEADER --- */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      background: rgba(0, 16, 34, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 194, 255, 0.15);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      margin-right: 15px;
+      /* Glow effect removed */
+    }
+
+    header h2 {
+      font-size: 20px;
+      color: #00c2ff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* --- MAIN CONTENT --- */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px 40px;
+      background: radial-gradient(circle at center, #011a2e 0%, #02050A 80%);
+    }
+
+    h1 {
+      font-size: 55px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #fff, #00c2ff, #00e5ff);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glowText 3s infinite alternate;
+    }
+
+    p {
+      font-size: 16px;
+      color: #b8c7d9;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    /* Loader */
+    .loader-container {
+      width: 200px;
+      height: 4px;
+      background: #001829;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 50px;
+      box-shadow: 0 0 10px rgba(0, 194, 255, 0.2);
+    }
+
+    .loader-bar {
+      width: 50%;
+      height: 100%;
+      background: #00c2ff;
+      position: absolute;
+      left: -50%;
+      border-radius: 10px;
+      animation: loading 2s infinite linear;
+      box-shadow: 0 0 15px #00c2ff;
+    }
+
+    /* --- SOCIAL LINKS SECTION --- */
+    .social-section {
+      margin-top: 20px;
+    }
+    .social-title {
+      font-size: 14px;
+      color: #58a6ff;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .s-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 194, 255, 0.3);
+      border-radius: 50%;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .s-btn img { width: 24px; height: 24px; filter: invert(1); }
+
+    .s-btn:hover {
+      background: #00c2ff;
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 194, 255, 0.6);
+      border-color: #00c2ff;
+    }
+    
+    /* Specific Hover Colors */
+    .s-btn.yt:hover { background: #ff0000; border-color: #ff0000; box-shadow: 0 0 20px rgba(255,0,0,0.6); }
+    .s-btn.wa:hover { background: #25D366; border-color: #25D366; box-shadow: 0 0 20px rgba(37,211,102,0.6); }
+    .s-btn.tg:hover { background: #0088cc; border-color: #0088cc; box-shadow: 0 0 20px rgba(0,136,204,0.6); }
+    .s-btn.mail:hover { background: #EA4335; border-color: #EA4335; box-shadow: 0 0 20px rgba(234,67,53,0.6); }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #000810;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 13px;
+      color: #6c7a89;
+    }
+    
+    footer span { color: #00c2ff; }
+
+    /* Animations */
+    @keyframes glowText {
+      0% { text-shadow: 0 0 10px rgba(0, 194, 255, 0.2); }
+      100% { text-shadow: 0 0 25px rgba(0, 194, 255, 0.6); }
+    }
+    @keyframes loading { 0% { left: -50%; } 100% { left: 100%; } }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 36px; }
+      p { font-size: 14px; padding: 0 10px; }
+      .social-icons { gap: 15px; }
+      .s-btn { width: 45px; height: 45px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="https://i.ibb.co/twC6yxxT/ic-launcher-monochrome.png" alt="Knight Logo" class="logo">
+    <h2>Knight App Store</h2>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <h1>COMING SOON</h1>
+    <p>We are building the ultimate secure app ecosystem. <br>Something powerful is on the way.</p>
+    
+    <!-- Loading Animation -->
+    <div class="loader-container">
+      <div class="loader-bar"></div>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="social-section">
+      <div class="social-title">Follow Us For Updates</div>
+      <div class="social-icons">
+        
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@KINGHTOFFICALZ" target="_blank" class="s-btn yt" title="YouTube">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube">
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://whatsapp.com/channel/0029VbC3FDKDTkJuxIf0yL3g" target="_blank" class="s-btn wa" title="WhatsApp">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp">
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/knightofficalz" target="_blank" class="s-btn tg" title="Telegram">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/telegram.svg" alt="Telegram">
+        </a>
+
+        <!-- Instagram (Placeholder) -->
+        <a href="#" target="_blank" class="s-btn ig" title="Instagram">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+        </a>
+
+        <!-- Gmail -->
+        <a href="mailto:knightservice24x7@gmail.com" class="s-btn mail" title="Email Us">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email">
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Knight LTD | All Rights Reserved</p>
+    <p style="margin-top: 5px;">Made in India 🇮🇳</p>
+  </footer>
+
+</body>
+</html>
